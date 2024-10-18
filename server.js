@@ -20,6 +20,13 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/fonts', express.static(path.join(__dirname, 'fonts'), {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.ttf')) res.setHeader('Content-Type', 'font/ttf');
+    else if (path.endsWith('.otf')) res.setHeader('Content-Type', 'font/otf');
+  }
+}));
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

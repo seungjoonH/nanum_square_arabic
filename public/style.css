@@ -1,8 +1,31 @@
+@font-face { 
+  font-family: "NanumSquareNeoVariable";
+  src: url(../fonts/NanumSquare\ Neo\ variable.ttf) format('truetype');
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: "NanumSquareArabic";
+  src: url(../fonts/Nanum\ Square\ Arabic.otf) format('opentype');
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: "IBMPlexMono";
+  src: url(../fonts/IBMPlexMono-Regular.ttf) format('truetype');
+  font-style: normal;
+}
+
 * { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #000;
+}
+
+html, body {
+  height: 100%;
+  font-family: "IBMPlexMono";
 }
 
 input {
@@ -15,10 +38,6 @@ input::placeholder {
   opacity: 0.5;
 }
 
-
-html, body {
-  height: 100%;
-}
 
 body {
   display: flex;
@@ -58,18 +77,20 @@ main {
   font-size: 50px;
   color: #000;
   background-color: #fff;
+  font-family: "NanumSquareNeoVariable";
 }
 
 #ar {
   width: 100%;
-  height: auto; /* 자동 높이 조정 */
+  height: auto; 
   color: #fff;
-  font-size: 200px;
+  font-size: 140px;
   text-align: center;
-  overflow: hidden; /* 초과 부분 숨기기 */
-  display: block; /* 블록 요소로 설정 */
-  max-height: 3.5em; /* 두 줄의 최대 높이 설정 */
-  line-height: 1.75em; /* 줄 간격 조정 */
+  overflow: hidden;
+  display: block; 
+  max-height: 3.5em;
+  line-height: 1.75em;
+  font-family: "NanumSquareArabic";
 }
 
 
@@ -78,5 +99,5 @@ footer {
   color: #ddd;
 }
 
-footer div div { width: 110px; }
+footer div div { width: 140px; }
 footer .divider { width: 20px; }

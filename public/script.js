@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     for (let char of word) 
       length += (1 + /[\uac00-\ud7af]/.test(char));
-  
-    console.log(word, length);
+
     return length;
   }
 
