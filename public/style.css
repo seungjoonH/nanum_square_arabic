@@ -34,8 +34,7 @@ input {
 }
 
 input::placeholder {
-  color: #000;
-  opacity: 0.5;
+  color: #888;
 }
 
 
@@ -75,28 +74,28 @@ main {
   height: 55.25px;
   margin: 29.5px 0;
   font-size: 50px;
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: #000;
   font-family: "NanumSquareNeoVariable";
 }
 
 #ar {
+  display: block; 
   width: 100%;
-  height: auto; 
+  height: 100%; 
+  font-family: "NanumSquareArabic";
   color: #fff;
-  font-size: 140px;
+  font-size: 130px;
   text-align: center;
   overflow: hidden;
-  display: block; 
   max-height: 3.5em;
   line-height: 1.75em;
-  font-family: "NanumSquareArabic";
 }
 
 
 footer {
   display: flex;
-  color: #ddd;
+  color: #888;
 }
 
 footer div div { width: 140px; }
