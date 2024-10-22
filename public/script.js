@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const korean = document.getElementById('ko');
   const arabic = document.getElementById('ar');
+  const koTextArea = korean.getElementsByTagName('textarea')[0];
+  const arTextArea = arabic.getElementsByTagName('textarea')[0];
 
   const translate = async (word) => {
     try {
@@ -18,30 +20,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const getLengthWithKoreanWeight = (word) => {
-    let length = 0;
-  
-    for (let char of word) 
-      length += (1 + /[\uac00-\ud7af]/.test(char));
+  const setPlaceHolder = () => koTextArea.placeholder = '한글을\n입력하세요';
 
-    return length;
+
+  const clearText = async () => {
+    arTextArea.value = '';
+    koTextArea.value = '';
   }
 
   let debouncer;
+  let clearTimer;
   const inputListener = async (event) => {
     const koreanWord = event.target.value;
-    if (getLengthWithKoreanWeight(koreanWord) > 50) {
-      korean.value = koreanWord.substring(0, koreanWord.length - 1);
-      return;
-    }
-
+    
     clearTimeout(debouncer);
+    clearTimeout(clearTimer);
 
     debouncer = setTimeout(async () => {
       const translatedWord = await translate(koreanWord);
-      arabic.innerText = translatedWord;
+      arTextArea.value = translatedWord + '\n';
+      clearTimer = setTimeout(clearText, 1000000);
     }, 500);
   };
 
+  setPlaceHolder();
   korean.addEventListener('input', inputListener);
 });

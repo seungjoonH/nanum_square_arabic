@@ -6,7 +6,7 @@
 
 @font-face { 
   font-family: "NanumSquareArabic";
-  src: url(../fonts/Nanum\ Square\ Arabic.otf) format('opentype');
+  src: url(../fonts/NanumSquareArabic-Regular.otf) format('opentype');
   font-style: normal;
 }
 
@@ -24,19 +24,9 @@
 }
 
 html, body {
-  height: 100%;
   font-family: "IBMPlexMono";
+  height: 100%;
 }
-
-input {
-  all: unset;
-  outline: 0;
-}
-
-input::placeholder {
-  color: #888;
-}
-
 
 body {
   display: flex;
@@ -45,58 +35,105 @@ body {
   padding: 20px 30px;
 }
 
-header {
+.vertical-spacer { width: 100px; }
+
+.container {
   width: 100%;
-  font-size: 15px;
   display: flex;
   justify-content: space-between;
 }
 
-header > div {
-  color: #0f0;
-  min-width: 100px;
-  text-align: center;
-}
-
-header > div:first-child { text-align: left; }
-header > div:last-child  { text-align: right; }
-
-main {
-  flex-grow: 1;
+.container > div {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  position: relative;
+  justify-content: space-between;
 }
 
-#ko {
-  width: 100%;
-  height: 55.25px;
-  margin: 29.5px 0;
-  font-size: 50px;
-  color: #fff;
-  background-color: #000;
-  font-family: "NanumSquareNeoVariable";
-}
+header > div.container > div { height: 20px; }
 
-#ar {
-  display: block; 
-  width: 100%;
-  height: 100%; 
-  font-family: "NanumSquareArabic";
-  color: #fff;
-  font-size: 130px;
+header {
+  font-size: 15px;
+  color: #0f0;
   text-align: center;
-  overflow: hidden;
-  max-height: 3.5em;
-  line-height: 1.75em;
+  margin-bottom: 50px;
 }
+
+header .arrow {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin-top: 30px;
+  background-color: #0f0;
+}
+
+header .arrow::before {
+  display: block;
+  position: absolute;
+  top: -4px; 
+  left: 1px;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-left: #0f0 1.4px solid;
+  border-top: #0f0 1.4px solid;
+  transform : rotate(-45deg);
+}
+
+header .arrow-right { transform : rotate(180deg); }
+
+main.container {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.text {
+  width: calc(50% - 25px);
+  height: 100%;
+  margin: 0;
+  align-items: top;
+  font-size: 120px;
+}
+
+textarea {
+  all: unset;
+  outline: 0;
+  width: 100%;
+  white-space: pre-wrap;
+  caret-color: #0f0;
+  line-height: 1.3em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+#ar > textarea {
+  font-family: "NanumSquareArabic", "NanumSquareNeoVariable";
+  color: #fff;
+  text-align: right;
+  justify-content: flex-end;
+  margin-top: -12px;
+  padding-right: 18px;
+  overflow: scroll;
+  scrollbar-width: 10px;
+}
+
+#ko > textarea {
+  font-family: "NanumSquareNeoVariable";
+  top: 0;
+  color: #d4d4d4;
+  padding-left: 18px;
+}
+
+#ko textarea::placeholder { color: #d4d4d480; }
 
 
 footer {
   display: flex;
   color: #888;
+  height: 70px;
+  align-items: end;
+  font-size: 12px;
 }
 
-footer div div { width: 140px; }
-footer .divider { width: 20px; }
+footer div div { width: 100px; }
+footer .divider { width: 15px; }

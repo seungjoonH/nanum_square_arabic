@@ -8,14 +8,29 @@
   <script src="./script.js"></script>
 </head>
 <body>
+  
   <header>
-    <div>Naver Nanum Square Neo</div>
-    <div>Multilingual Font</div>
-    <div>Regular 800 pt</div>
+    <div class="container">
+      <div>Naver Nanum Square Neo</div>
+      <span class="vertical-spacer"></span>
+      <div>
+        <div>Multilingual Font</div>
+        <div>Regular 800 pt</div>
+      </div>
+    </div>
+    <div class="container">
+      <span class="arrow arrow-left"></span>
+      <span class="vertical-spacer"></span>
+      <span class="arrow arrow-right"></span>
+    </div>
   </header>
-  <main>
-    <div><input type="text" id="ko" placeholder="텍스트를 입력해주세요."/></div>
-    <div id="ar"></div>
+  <main class="container">
+    <div class="text" id="ar">
+      <textarea wrap="hard" disabled></textarea>
+    </div>
+    <div class="text" id="ko">
+      <textarea wrap="hard"></textarea>
+    </div>
   </main>
   <footer>
     <div>
