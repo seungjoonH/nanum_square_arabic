@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     debouncer = setTimeout(async () => {
       const translatedWord = await translate(koreanWord);
       arTextArea.value = translatedWord + '\n';
-      clearTimer = setTimeout(clearText, 100000);
+      clearTimer = setTimeout(clearText, 30000);
     }, 500);
   };
 
