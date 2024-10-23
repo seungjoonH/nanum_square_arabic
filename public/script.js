@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const setPlaceHolder = () => koTextArea.placeholder = '본인의\n이름을\n적어보세요!';
+  const setPlaceHolder = () => koTextArea.placeholder = '본인의\n이름을\n적어보세요';
 
 
   const clearText = async () => {
